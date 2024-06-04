@@ -1,7 +1,5 @@
 # Djanjo
 
-[Crear proyecto con django.pdf](Djanjo%20ddb962000cf647b1ad8025f63d765b95/Crear_proyecto_con_django.pdf)
-
 ### Paso 2: Crear un entorno virtual y un proyecto Django
 
 1. **Crear un entorno virtual:**
@@ -54,8 +52,6 @@
     python manage.py startapp administration
     ```
     
-    ![Untitled](Djanjo%20ddb962000cf647b1ad8025f63d765b95/Untitled.png)
-    
 7. Configurar el proyecto:
 - En `ecommerce/settings.py`, agrega 'store' y 'administration' a `INSTALLED_APPS`.
     
@@ -97,7 +93,7 @@
     
     ### Paso 3: Abre DataGrip y configura una nueva conexión
 
-    [jetbrains Student Pack](https://anvilproject.org/guides/content/creating-links)
+    [jetbrains Student Pack](https://www.jetbrains.com/es-es/datagrip/)
     
     1. **Abre DataGrip** y ve a `File > Data Sources and Drivers`.
     2. **Añade una nueva conexión** seleccionando `SQLite`.
@@ -454,24 +450,23 @@ Crear Vistas y plantillas
     a partir de aquí configure el proyecto para tener la lógica de administrador separado y genere varias vistas en administration donde cambie de carpetas algunos templates de store a la carpeta administration/templates
 
 
+## Queda pendiente
 
-# Queda pendiente
-
-[] -  Logearse como admin y ejecutar CRUD de productos y usuarios
-[] -  Mis productos (lista con las fotos, nombres y precios de los productos, 10
+- [ ]  Logearse como admin y ejecutar CRUD de productos y usuarios
+- [ ]  Mis productos (lista con las fotos, nombres y precios de los productos, 10
 productos). Los productos son leídos desde la tabla Productos y reflejados en la
 página. La foto debe estar en una carpeta de fotos ( en nuestro caso media ) y en la tabla solo el nombre de la foto.
-[] - Quiénes Somos (nombre y foto de los dos integrantes)
-[] - Login (esta opción permite ingresar al administrador de usuarios y productos). Alcerrar la sesión desaparece la opción Administración del Navbar
-[] - El sistema debe enviar un mensaje de error si es que el usuario no se pudo logear.
+- [ ] Quiénes Somos (nombre y foto de los dos integrantes)
+- [ ] Login (esta opción permite ingresar al administrador de usuarios y productos). Alcerrar la sesión desaparece la opción Administración del Navbar
+- [ ] El sistema debe enviar un mensaje de error si es que el usuario no se pudo logear.
 
 
-# Importante
-  ## Revisar
-  [] - No debe usar la tabla User de Django
-  [] - Logout
-  [] - Ajustar Template´s con un diseño mas atractivos y con bootstrap
+## Importante
+  ### Revisar
+  - [ ] No debe usar la tabla User de Django
+  - [ ] Logout
+  - [ ] Ajustar Template´s con un diseño mas atractivos y con bootstrap
 
   `Agrege el archivo db.sqlite3 al .gitignore` Hay que probar si no genera problemas este punto
 
-### Proyecto aun en desarrollo
+## Proyecto aun en desarrollo
