@@ -93,7 +93,7 @@
     
     ### Paso 3: Abre DataGrip y configura una nueva conexión
 
-    [jetbrains Student Pack](https://www.jetbrains.com/es-es/datagrip/)
+    [jetbrains Student Pack](https://www.jetbrains.com/community/education/#students)
     
     1. **Abre DataGrip** y ve a `File > Data Sources and Drivers`.
     2. **Añade una nueva conexión** seleccionando `SQLite`.
