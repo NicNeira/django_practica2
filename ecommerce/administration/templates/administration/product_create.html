@@ -1,0 +1,28 @@
+{% block title %}Crear Producto{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Crear Producto</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>Nombre:</label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Descripción:</label>
+            <textarea name="description" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Precio:</label>
+            <input type="number" name="price" class="form-control" step="0.01" value="0.00" required>
+        </div>
+        <div class="form-group">
+            <label>Imagen:</label>
+            <input type="file" name="image" class="form-control-file" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'admin_products' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

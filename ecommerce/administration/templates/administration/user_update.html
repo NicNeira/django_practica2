@@ -1,0 +1,61 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Editar Usuario{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Editar Usuario</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class="form-control" value="{{ user.username }}" required>
+            <small class="form-text text-muted">Este campo es único y no puede repetirse.</small>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" value="{{ user.email }}" required>
+            <small class="form-text text-muted">Asegúrate de usar un email válido.</small>
+        </div>
+        <div class="form-group">
+            <label for="new_password">Nueva Contraseña:</label>
+            <input type="password" id="new_password" name="new_password" class="form-control">
+            <small class="form-text text-muted">Deja en blanco para mantener la contraseña actual. Use una contraseña segura.</small>
+        </div>
+        <div class="form-group">
+            <label for="confirm_new_password">Confirmar Nueva Contraseña:</label>
+            <input type="password" id="confirm_new_password" name="confirm_new_password" class="form-control">
+            <small class="form-text text-muted">Repite la nueva contraseña para confirmar. Deja en blanco si no la cambias.</small>
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" id="is_admin" name="is_admin" class="form-check-input" {% if user.is_admin %}checked{% endif %}>
+            <label class="form-check-label" for="is_admin">Es Administrador</label>
+            <small class="form-text text-muted d-block">Selecciona esta opción si el usuario debe tener acceso de administrador.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
+        <a href="{% url 'admin_users' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var newPassword = document.getElementById('new_password');
+    var confirmNewPassword = document.getElementById('confirm_new_password');
+    var form = document.querySelector('form');
+
+    form.addEventListener('submit', function(e) {
+        if (newPassword.value !== '' && newPassword.value !== confirmNewPassword.value) {
+            e.preventDefault();
+            alert('Las nuevas contraseñas no coinciden. Por favor, inténtalo de nuevo o deja ambos campos en blanco para mantener la contraseña actual.');
+        }
+    });
+});
+</script>
+{% endblock %}

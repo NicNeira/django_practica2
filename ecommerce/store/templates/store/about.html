@@ -1,0 +1,53 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Quiénes Somos{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Quiénes Somos</h1>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <img src="{% static 'img/dev1.jpg' %}" class="card-img-top" alt="Desarrollador 1">
+                <div class="card-body">
+                    <h5 class="card-title">Juan Pérez</h5>
+                    <p class="card-text">Co-fundador y desarrollador backend. Con más de 5 años de experiencia en Django y Python, Juan se encarga de la arquitectura y la lógica del servidor.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <img src="{% static 'img/dev2.jpg' %}" class="card-img-top" alt="Desarrollador 2">
+                <div class="card-body">
+                    <h5 class="card-title">María Gómez</h5>
+                    <p class="card-text">Co-fundadora y desarrolladora frontend. Especialista en UX/UI con experiencia en Bootstrap y React, María da vida a nuestras interfaces.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <h2 class="display-4">Nuestra Historia</h2>
+        <p class="lead">MiTienda nació en 2020, en medio de la pandemia, cuando Juan y María decidieron combinar sus habilidades para crear una plataforma de e-commerce que realmente entendiera las necesidades de los usuarios.</p>
+        <hr class="my-4">
+        <p>Hoy, MiTienda es reconocida por su facilidad de uso, diseño elegante y por poner el poder del comercio electrónico al alcance de todos.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'products' %}" role="button">Ver Productos</a>
+    </div>
+
+    <section class="mb-4">
+        <h2>Nuestra Misión</h2>
+        <p>Facilitar el comercio electrónico para todos, haciendo que vender y comprar en línea sea una experiencia simple, segura y agradable.</p>
+    </section>
+
+    <section>
+        <h2>Nuestros Valores</h2>
+        <ul>
+            <li>Innovación: Siempre buscando nuevas formas de mejorar.</li>
+            <li>Integridad: Honestidad en cada transacción.</li>
+            <li>Comunidad: Apoyando a vendedores y compradores.</li>
+            <li>Calidad: No hacemos concesiones.</li>
+        </ul>
+    </section>
+</div>
+{% endblock %}
