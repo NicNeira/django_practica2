@@ -84,10 +84,6 @@ def create_user(request):
         password = request.POST['password']
         is_admin = 'is_admin' in request.POST
         
-        # En un escenario real, deberíamos hashear la contraseña
-        # from django.contrib.auth.hashers import make_password
-        # hashed_password = make_password(password)
-        
         user = CustomUser(username=username, email=email, password=password, is_admin=is_admin)
         user.save()
         messages.success(request, 'Usuario creado exitosamente.')
@@ -104,9 +100,9 @@ def update_user(request, user_id):
     if request.method == 'POST':
         user.username = request.POST['username']
         user.email = request.POST['email']
-        if request.POST['password']:
-            # Actualiza la contraseña solo si se proporciona una nueva
-            user.password = request.POST['password']  # Recuerda hashear en un escenario real
+        new_password = request.POST.get('new_password')
+        if new_password:
+            user.password = new_password
         user.is_admin = 'is_admin' in request.POST
         user.save()
         messages.success(request, 'Usuario actualizado exitosamente.')

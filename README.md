@@ -2,6 +2,8 @@
 
 ### Paso 2: Crear un entorno virtual y un proyecto Django
 
+**En general trabajo desde VScode y con una terminal de powershell**
+
 1. **Crear un entorno virtual:**
     
     ```
@@ -448,6 +450,14 @@ Crear Vistas y plantillas
     `Continuar editando otras views`
     
     a partir de aquí configure el proyecto para tener la lógica de administrador separado y genere varias vistas en administration donde cambie de carpetas algunos templates de store a la carpeta administration/templates
+
+# Dia 2
+
+ ### Agrege
+
+ **- DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'** en `settings.py` de `ecommerce`
+
+ 
 
 
 ## Queda pendiente

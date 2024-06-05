@@ -1,4 +1,5 @@
-{% extends 'store/base.html' %}
+{% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Quiénes Somos{% endblock %}
 
@@ -9,7 +10,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="card mb-4">
-                <img src="{% static 'img/dev1.jpg' %}" class="card-img-top" alt="Desarrollador 1">
+                <img src="{% static 'img/dev1.png' %}" class="card-img-top" alt="Desarrollador 1">
                 <div class="card-body">
                     <h5 class="card-title">Juan Pérez</h5>
                     <p class="card-text">Co-fundador y desarrollador backend. Con más de 5 años de experiencia en Django y Python, Juan se encarga de la arquitectura y la lógica del servidor.</p>
@@ -18,7 +19,7 @@
         </div>
         <div class="col-md-6">
             <div class="card mb-4">
-                <img src="{% static 'img/dev2.jpg' %}" class="card-img-top" alt="Desarrollador 2">
+                <img src="{% static 'img/dev2.png' %}" class="card-img-top" alt="Desarrollador 2">
                 <div class="card-body">
                     <h5 class="card-title">María Gómez</h5>
                     <p class="card-text">Co-fundadora y desarrolladora frontend. Especialista en UX/UI con experiencia en Bootstrap y React, María da vida a nuestras interfaces.</p>
@@ -32,7 +33,7 @@
         <p class="lead">MiTienda nació en 2020, en medio de la pandemia, cuando Juan y María decidieron combinar sus habilidades para crear una plataforma de e-commerce que realmente entendiera las necesidades de los usuarios.</p>
         <hr class="my-4">
         <p>Hoy, MiTienda es reconocida por su facilidad de uso, diseño elegante y por poner el poder del comercio electrónico al alcance de todos.</p>
-        <a class="btn btn-primary btn-lg" href="{% url 'products' %}" role="button">Ver Productos</a>
+        
     </div>
 
     <section class="mb-4">
