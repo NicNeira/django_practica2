@@ -35,7 +35,13 @@
         python -m django --version
         ```
         
-4. **Crear un proyecto Django:**
+    instalar pillows
+
+    ```
+    python -m pip install Pillow
+    ```
+
+4. **pasos por si se inicia el proyecto de 0 - Crear un proyecto Django:**
     
     ```
     django-admin startproject ecommerce_project
