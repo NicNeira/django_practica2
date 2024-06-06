@@ -445,7 +445,7 @@ Crear Vistas y plantillas
 3. Crear plantillas utilizando Bootstrap:
     
     
-    Crea una carpeta `templates` dentro de la aplicación `store` y añade archivos HTML como `index.html`, `login.html`, `admin.html`, `products.html`, `admin_products.html`, `admin_users.html`. Asegúrate de incluir Bootstrap en tus plantillas.
+    Crea una carpeta `templates` dentro de la aplicación `store` y añade archivos HTML como `index.html`, `login.html`, `products.html`, . Asegúrate de incluir Bootstrap en tus plantillas.
     
     `Continuar editando otras views`
     
@@ -462,19 +462,19 @@ Crear Vistas y plantillas
 
 ## Queda pendiente
 
-- [ ]  Logearse como admin y ejecutar CRUD de productos y usuarios
-- [ ]  Mis productos (lista con las fotos, nombres y precios de los productos, 10
+- [x]  Logearse como admin y ejecutar CRUD de productos y usuarios
+- [x]  Mis productos (lista con las fotos, nombres y precios de los productos, 10
 productos). Los productos son leídos desde la tabla Productos y reflejados en la
 página. La foto debe estar en una carpeta de fotos ( en nuestro caso media ) y en la tabla solo el nombre de la foto.
-- [ ] Quiénes Somos (nombre y foto de los dos integrantes)
-- [ ] Login (esta opción permite ingresar al administrador de usuarios y productos). Alcerrar la sesión desaparece la opción Administración del Navbar
-- [ ] El sistema debe enviar un mensaje de error si es que el usuario no se pudo logear.
+- [x] Quiénes Somos (nombre y foto de los dos integrantes)
+- [x] Login (esta opción permite ingresar al administrador de usuarios y productos). Alcerrar la sesión desaparece la opción Administración del Navbar
+- [x] El sistema debe enviar un mensaje de error si es que el usuario no se pudo logear.
 
 
 ## Importante
   ### Revisar
-  - [ ] No debe usar la tabla User de Django
-  - [ ] Logout
+  - [x] No debe usar la tabla User de Django
+  - [x] Logout
   - [ ] Ajustar Template´s con un diseño mas atractivos y con bootstrap
 
   `Agrege el archivo db.sqlite3 al .gitignore` Hay que probar si no genera problemas este punto
