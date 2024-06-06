@@ -41,6 +41,12 @@
     python -m pip install Pillow
     ```
 
+- Moverse a la carpeta del proyecto 
+
+```
+cd ecommerce
+```
+
 4. **pasos por si se inicia el proyecto de 0 - Crear un proyecto Django:**
     
     ```
@@ -482,7 +488,5 @@ página. La foto debe estar en una carpeta de fotos ( en nuestro caso media ) y 
   - [x] No debe usar la tabla User de Django
   - [x] Logout
   - [ ] Ajustar Template´s con un diseño mas atractivos y con bootstrap
-
-  `Agrege el archivo db.sqlite3 al .gitignore` Hay que probar si no genera problemas este punto
 
 ## Proyecto aun en desarrollo
