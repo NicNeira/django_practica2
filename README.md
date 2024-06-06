@@ -47,6 +47,14 @@
 cd ecommerce
 ```
 
+- Ejecutar el servidor:
+        
+        ```bash
+        python manage.py runserver
+        ```
+        
+Acceder a tu sitio en `http://127.0.0.1:8000/`.
+
 4. **pasos por si se inicia el proyecto de 0 - Crear un proyecto Django:**
     
     ```
