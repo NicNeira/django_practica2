@@ -5,6 +5,7 @@ from django.contrib import messages
 from .models import Product, CustomUser
 from django.shortcuts import render
 from datetime import datetime
+from .forms import ContactForm
 
 def index(request):
     is_admin = request.session.get('is_admin', False)
@@ -69,3 +70,16 @@ def consultar_api(request):
     }
 
     return render(request, 'consultar_api.html', context)
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact_success')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
+
+def contact_success(request):
+    return render(request, 'contact_success.html')
