@@ -1,7 +1,10 @@
+import requests
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .models import Product, CustomUser
+from django.shortcuts import render
+from datetime import datetime
 
 def index(request):
     is_admin = request.session.get('is_admin', False)
@@ -39,3 +42,30 @@ def logout_view(request):
     if 'is_admin' in request.session:
         del request.session['is_admin']
     return redirect('index')
+
+def consultar_api(request):
+    api_key = '9TB3Hax6IdLA0e9kHlMhADXF4viuQcoO'
+    location_url = f'http://dataservice.accuweather.com/locations/v1/cities/search?apikey={api_key}&q=SANTIAGO'
+    location_response = requests.get(location_url).json()
+    location_key = location_response[0]['Key']  # Obtener el LocationKey de la respuesta
+    
+    weather_url = f'http://dataservice.accuweather.com/currentconditions/v1/{location_key}?apikey={api_key}'
+    weather_response = requests.get(weather_url).json()
+    temperature = weather_response[0]['Temperature']['Metric']['Value']  # Obtener la temperatura
+    observation_time = weather_response[0]['LocalObservationDateTime']
+
+    # Formatear la fecha
+    formatted_date = datetime.fromisoformat(observation_time).strftime('%d-%m-%Y %H:%M:%S')
+
+    print(f'La Fecha es {formatted_date}°C')
+
+    context = {
+        'location_key': location_key,
+        'temperature': temperature,
+        'location_city': location_response[0]['LocalizedName'],
+        'location_country': location_response[0]['Country']['LocalizedName'],
+        'formatted_date': formatted_date,
+        'Link': weather_response[0]['Link'],
+    }
+
+    return render(request, 'consultar_api.html', context)
