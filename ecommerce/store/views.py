@@ -6,6 +6,7 @@ from .models import Product, CustomUser
 from django.shortcuts import render
 from datetime import datetime
 from .forms import ContactForm
+import os
 
 def index(request):
     is_admin = request.session.get('is_admin', False)
@@ -45,12 +46,13 @@ def logout_view(request):
     return redirect('index')
 
 def consultar_api(request):
-    api_key = '9TB3Hax6IdLA0e9kHlMhADXF4viuQcoO'
+    api_key = os.getenv('API_KEY')
     location_url = f'http://dataservice.accuweather.com/locations/v1/cities/search?apikey={api_key}&q=SANTIAGO'
     location_response = requests.get(location_url).json()
     location_key = location_response[0]['Key']  # Obtener el LocationKey de la respuesta
     
     weather_url = f'http://dataservice.accuweather.com/currentconditions/v1/{location_key}?apikey={api_key}'
+
     weather_response = requests.get(weather_url).json()
     temperature = weather_response[0]['Temperature']['Metric']['Value']  # Obtener la temperatura
     observation_time = weather_response[0]['LocalObservationDateTime']
